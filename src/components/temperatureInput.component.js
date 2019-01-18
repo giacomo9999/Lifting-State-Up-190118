@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import { Container, Card, Form, Input } from "semantic-ui-react";
-import BoilingVerdict from "./boilingVerdict.component";
-import ScaleNames from "./scaleNames.component";
+import { ScaleNames } from "./helpers";
 
 class TemperatureInput extends Component {
-  state = { temperature: "" };
+  //   state = { temperature: "" };
 
   handleChange = e => {
-    this.setState({ temperature: e.target.value });
+    console.log("changing temp...");
+    // this.setState({ temperature: e.target.value });
+    this.props.onTemperatureChange(e.target.value);
   };
 
   render() {
-    const temperature = this.state.temperature;
+    // Before: const temperature = this.state.temperature;
+    const temperature = this.props.temperature;
     const scale = this.props.scale;
 
     return (
@@ -32,8 +34,6 @@ class TemperatureInput extends Component {
               />
             </Form.Field>
             <br />
-
-            <BoilingVerdict celsius={Number(temperature)} />
           </Card.Content>
         </Card>
       </Container>
