@@ -16,7 +16,7 @@ const BoilingVerdict = props => {
   );
 };
 
-const ToCelsius = fahrenheit => ((fahrenheit - 32) * 5) / 9;
+const ToCelsius = fahrenheit => (fahrenheit - 32) * 5 / 9;
 
 const ToFahrenheit = celsius => (celsius * 9) / 5 + 32;
 
@@ -32,7 +32,9 @@ const tryConvert = (temperature, convert) => {
   }
   const output = convert(input);
   const rounded = Math.round(output * 1000) / 1000;
-  return rounded.toString;
+  return rounded.toString();
 };
+
+
 
 export { ScaleNames, BoilingVerdict, ToCelsius, ToFahrenheit, tryConvert };

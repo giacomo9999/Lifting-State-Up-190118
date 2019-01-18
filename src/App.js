@@ -11,10 +11,6 @@ import {
 class App extends Component {
   state = { temperature: "0", scale: "c" };
 
-  // handleChange = e => {
-  //   this.setState({ temperature: e.target.value });
-  // };
-
   handleCelsiusChange = temperature => {
     this.setState({ scale: "c", temperature });
   };

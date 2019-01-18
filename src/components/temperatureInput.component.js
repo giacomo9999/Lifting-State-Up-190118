@@ -33,6 +33,7 @@ class TemperatureInput extends Component {
                 onChange={this.handleChange}
               />
             </Form.Field>
+
             <br />
           </Card.Content>
         </Card>
