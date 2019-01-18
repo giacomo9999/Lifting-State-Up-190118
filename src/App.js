@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Container, Card, Form, Button, Input } from "semantic-ui-react";
 import BoilingVerdict from "./components/boilingVerdict.component";
+import ScaleNames from "./components/scaleNames.component";
+import TemperatureInput from "./components/temperatureInput.component";
 
 class App extends Component {
   state = { temperature: "" };
@@ -15,24 +17,8 @@ class App extends Component {
       <Container>
         <style>{`html, body {background-color: #2E4053 !important;} }`}</style>
 
-        <br />
-        <Card centered>
-          <Card.Content>
-            <Card.Header textAlign="center">Temperature Calculator</Card.Header>
-            <br />
-            <Form.Field>
-              <Input
-                fluid
-                placeholder="Enter temp in Celsius:"
-                value={temperature}
-                onChange={this.handleChange}
-              />
-            </Form.Field>
-            <br />
-
-            <BoilingVerdict celsius={Number(temperature)} />
-          </Card.Content>
-        </Card>
+        <TemperatureInput scale="c" />
+        <TemperatureInput scale="f" />
       </Container>
     );
   }
