@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Card } from "semantic-ui-react";
+import BoilingVerdict from "./components/boilingVerdict.component";
 
 class App extends Component {
   render() {
@@ -11,6 +12,8 @@ class App extends Component {
         <Card centered>
           <Card.Content>
             <Card.Header textAlign="center">Temperature Calculator</Card.Header>
+
+            <BoilingVerdict celsius="125"/>
           </Card.Content>
         </Card>
       </Container>
